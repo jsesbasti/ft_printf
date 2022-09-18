@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 21:13:40 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/18 14:25:19 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:59:54 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dstsize + ft_strlen(src));
 	i = ft_strlen(dst);
 	j = 0;
-	while (src[j] != '\0' && i + 1 < dstsize)
+	while (src[j] != '\0' && i - 1 < dstsize)
 	{
 		dst[i] = src[j];
 		i++;

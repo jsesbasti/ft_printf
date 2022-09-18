@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 15:09:35 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/18 15:39:47 by jsebasti         ###   ########.fr       */
+/*   Created: 2022/09/14 16:27:25 by jsebasti          #+#    #+#             */
+/*   Updated: 2022/09/18 18:54:19 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_isalnum(int c)
 {
-
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
