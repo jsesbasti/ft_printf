@@ -6,11 +6,12 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 21:13:40 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/17 19:14:17 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/18 12:27:19 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 #include <stdio.h>
 
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
@@ -30,12 +31,13 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (ft_strlen(dst));
 }
-
+/*
 int	main()
 {
 	char *d = "Hola buenas";
 	const char *s = "Que tal?";
 
-	printf("esto es el original del strlcat: %lu", ft_strlcat(d, s, 5));
+	printf("esto es el original del strlcat: %lu", strlcat(d, s, 5));
 	return (0);
 }
+*/
