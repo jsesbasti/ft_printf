@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:55:51 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/15 21:27:52 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:39:48 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	unsigned const char *s;
-	size_t	index;
+	unsigned char		*d;
+	unsigned const char	*s;
+	size_t				index;
 
 	d = dst;
 	s = src;
 	index = 0;
-	if (dst == src)
-		return (dst);
 	if (dst < src)
 	{
 		while (index < len)
@@ -31,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			index++;
 		}
 	}
-	else
+	else if (dst > src)
 	{
 		while (len > index)
 		{

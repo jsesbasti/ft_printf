@@ -6,18 +6,13 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 16:27:25 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/14 16:35:00 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:03:55 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	alnum(int c)
 {
-	unsigned char	a;
-
-	if (a >= '0' && a <= '9')
-		return (1);
-	else if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
-		return (1);
-	else
-		return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
