@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 15:09:35 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/20 04:56:47 by jsebasti         ###   ########.fr       */
+/*   Created: 2022/09/20 10:04:48 by jsebasti          #+#    #+#             */
+/*   Updated: 2022/09/20 10:25:44 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (ft_memchr(s, c, ft_strlen(s) + 1));
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (c % 256 >= 1)
+			c -= 256 * (c / 256);
+		if (s[i] == c)
+		{
+			return ((char *)&s[i]);
+		}
+		i--;
+	}
+	return (0);
 }

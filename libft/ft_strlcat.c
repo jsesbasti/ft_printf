@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 21:13:40 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/18 18:59:54 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/19 23:02:17 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	j;
+	char	*dest;
+	char	*source;
+	size_t	dst_length;
+	size_t	remaing;
 
-	if (dstsize <= ft_strlen(dst))
-		return (dstsize + ft_strlen(src));
-	i = ft_strlen(dst);
-	j = 0;
-	while (src[j] != '\0' && i < dstsize)
+	dest = dst;
+	source = (char *)src;
+	remaing = dstsize;
+	while (remaing-- != 0 && *dest != '\0')
+		dest++;
+	dst_length = dest - dst;
+	remaing = dstsize - dst_length;
+	if (remaing == 0)
+		return (dst_length + ft_strlen(source));
+	while (*source != '\0')
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		if (remaing > 1)
+		{
+			*dest++ = *source;
+			remaing--;
+		}
+		source++;
 	}
-
-	return (ft_strlen(dst));
+	*dest = '\0';
+	return (dst_length + (source - src));
 }
-/*
-int	main()
-{
-	char *d = "Hola buenas";
-	const char *s = "Que tal?";
-
-	printf("esto es el original del strlcat: %lu", strlcat(d, s, 5));
-	return (0);
-}
-*/

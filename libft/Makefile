@@ -6,7 +6,7 @@
 #    By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 17:56:46 by jsebasti          #+#    #+#              #
-#    Updated: 2022/09/18 18:48:28 by jsebasti         ###   ########.fr        #
+#    Updated: 2022/09/20 10:04:08 by jsebasti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,7 @@ NAME = libft.a
 
 HEADER = libft.h
 
-SRC =	ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-		ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c \
-		ft_strlen.c ft_tolower.c ft_toupper.c
+SRC =	$(wildcard *.c)
 
 OBJ = $(SRC:.c=.o)
 
