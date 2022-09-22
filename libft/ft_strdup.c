@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 15:27:32 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/20 15:27:37 by jsebasti         ###   ########.fr       */
+/*   Created: 2022/09/21 23:48:20 by marvin            #+#    #+#             */
+/*   Updated: 2022/09/21 23:48:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char *ft_strdup(const char *s1)
 {
-	
+	size_t i;
+	size_t len;
+	char *ss1;
 }
