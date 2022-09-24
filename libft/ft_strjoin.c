@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 19:53:42 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/22 21:02:49 by jsebasti         ###   ########.fr       */
+/*   Created: 2022/09/23 14:08:23 by jsebasti          #+#    #+#             */
+/*   Updated: 2022/09/23 15:50:03 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	nbr;
+	size_t	i;
+	size_t	j;
+	char	*res;
 
-	if (n < 0)
+	if (!s1 || !s2)
 	{
-		ft_putchar_fd('-', fd);
-		nbr = (unsigned int)(n * -1);
+		if (!s1)
+			return ((char *)s2);
+		if (!s2)
+			return ((char *)s1);
 	}
-	else
-		nbr = (unsigned int)n;
-	if (nbr >= 10)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd((char)(nbr % 10 + 48), fd);
+	res = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!res)
+		return (NULL);
+	i = -1;
+	j = -1;
+	while (++i < ft_strlen(s1))
+		res[i] = ((char *)s1)[i];
+	while (++j <= ft_strlen(s2))
+	{
+		res[i] = ((char *)s2)[j];
+		i++;
+	}
+	return (res);
 }

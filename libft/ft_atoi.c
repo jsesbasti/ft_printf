@@ -12,12 +12,6 @@
 
 #include "libft.h"
 
-<<<<<<< HEAD
-int	ft_atoi(const char *str)
-{
-	
-}
-=======
 static int	limit(long long n, const char *s, int sign)
 {
 	long long	limit_min;
@@ -57,4 +51,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
->>>>>>> 5c16eb16e1bc677958939cc2b35e31f7d620a6a2

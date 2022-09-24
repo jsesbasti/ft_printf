@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:04:18 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/20 15:27:19 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:49:47 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			j++;
 		}
 		if (needle[j] == '\0')
-			return ((char *)haystack + i);
+			return ((char *)&haystack[i]);
 		i++;
 	}
 	return (0);
