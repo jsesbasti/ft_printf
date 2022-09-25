@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 21:13:40 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/19 23:02:17 by jsebasti         ###   ########.fr       */
+/*   Created: 2022/09/25 19:04:11 by jsebasti          #+#    #+#             */
+/*   Updated: 2022/09/25 19:04:11 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	*dest = '\0';
 	return (dst_length + (source - src));
 }
+
