@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 19:50:09 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/25 19:50:09 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:14:54 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	while (lst)
 	{
-		aux = lst->next;
-		f(lst);
-		lst = aux;
+		aux = lst->content;
+		f(aux);
+		lst = lst->next;
 	}
 }
