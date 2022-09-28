@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:57:07 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/28 18:50:35 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/28 19:52:43 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int	ft_print_unsigned(unsigned int n, int count)
 {
-	int	
+	if (n > 9)
+		count = ft_print_unsigned(n / 10, count);
+	count = ft_print_char(n % 10 + '0', count);
+	return (count);
 }
