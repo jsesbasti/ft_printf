@@ -6,9 +6,11 @@
 #    By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 21:24:52 by jsebasti          #+#    #+#              #
-#    Updated: 2022/09/28 18:50:35 by jsebasti         ###   ########.fr        #
+#    Updated: 2022/09/28 19:58:08 by jsebasti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 NAME = libftprintf.a
 
@@ -21,20 +23,20 @@ SRC =	ft_printf.c \
 		src/ft_print_hexa_low.c \
 		src/ft_print_hexa_up.c
 
-LIBC = ar -rcs
-
-OBJ = $(SRC:.c=.o)
-
 CC = gcc
 
 RM = rm -rf
 
 FLAGS = -Werror -Wall -Wextra
 
-.c.o :
+LIBC = ar -rcs
+
+OBJ = $(SRC:.c=.o)
+
+.c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME) = $(OBJ)
+$(NAME): $(OBJ)
 	$(LIBC) $(NAME) $(OBJ)
 
 all: $(NAME)
@@ -47,4 +49,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re .c.o bonus
+.PHONY: all clean fclean re .c.o

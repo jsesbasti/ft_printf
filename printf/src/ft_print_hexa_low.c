@@ -6,13 +6,13 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 19:20:27 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/28 19:50:51 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/28 19:59:24 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_print_hexa_low(unsigned long hx, int count)
+int	ft_print_hexa_low(unsigned int hx, int count)
 {
 	char	*base;
 
