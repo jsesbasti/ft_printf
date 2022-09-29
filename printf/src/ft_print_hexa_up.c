@@ -20,5 +20,7 @@ int	ft_print_hexa_up(unsigned int hx, int count)
 	if (hx > 15)
 		count = ft_print_hexa_up(hx / 16, count);
 	count = ft_print_char(base[hx % 16], count);
+	if (count == -1)
+		return (count);
 	return (count);
 }

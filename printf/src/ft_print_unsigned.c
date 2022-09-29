@@ -17,5 +17,7 @@ int	ft_print_unsigned(unsigned int n, int count)
 	if (n > 9)
 		count = ft_print_unsigned(n / 10, count);
 	count = ft_print_char(n % 10 + '0', count);
+	if (count == -1)
+		return (count);
 	return (count);
 }

@@ -22,6 +22,8 @@ int	ft_print_str(char const *s, int count)
 	while (s[i])
 	{
 		count = ft_print_char(s[i], count);
+		if (count == -1)
+			return (count);
 		i++;
 	}
 	return (count);

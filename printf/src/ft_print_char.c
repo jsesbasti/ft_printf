@@ -14,7 +14,17 @@
 
 int	ft_print_char(char const c, int count)
 {
-	write(1, &c, 1);
-	count += 1;
+	int error;
+
+	error = 0;
+	if (!error)
+	{
+		if (write(1, &c, 1) == -1)
+			error = 1;
+		else
+			count += 1;
+	}
+	else
+		return (error);
 	return (count);
 }

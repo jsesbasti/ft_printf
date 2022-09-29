@@ -20,6 +20,8 @@ int	ft_print_digits(int n, int count)
 	if (number < 0)
 	{
 		count = ft_print_char('-', count);
+		if (count == -1)
+			return (count);
 		number *= -1;
 	}
 	if (number > 9)
