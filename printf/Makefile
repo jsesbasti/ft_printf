@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-
+HEADER = ft_printf.h
 
 NAME = libftprintf.a
 
@@ -36,7 +36,7 @@ OBJ = $(SRC:.c=.o)
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HEADER)
 	$(LIBC) $(NAME) $(OBJ)
 
 all: $(NAME)
