@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:02:45 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/28 17:45:29 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/09/29 12:37:05 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	ft_printf(char const *s, ...)
 		{
 			i++;
 			caract = ft_cond((char)s[i], args, caract);
+			if (caract == -1)
+				return (-1);
 		}
 		else
 			caract = ft_print_char(s[i], caract);
