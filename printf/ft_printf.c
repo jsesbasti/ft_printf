@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:02:45 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/10/09 20:05:19 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/10/09 23:14:42 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,11 @@ static int	ft_cond(char const c, va_list args, int count)
 	return (count);
 }
 
-int	ft_printf(char const *s, ...)
+static int	check(char const *s, va_list args, int caract)
 {
-	va_list	args;
-	int		caract;
-	int		i;
+	int	i;
 
-	caract = 0;
 	i = 0;
-	va_start(args, s);
 	while (s[i])
 	{
 		if (s[i] == '%')
@@ -52,9 +48,24 @@ int	ft_printf(char const *s, ...)
 				return (-1);
 		}
 		else
+		{
 			caract = ft_print_char(s[i], caract);
+			if (caract == -1)
+				return (-1);
+		}
 		i++;
 	}
+	return (caract);
+}
+
+int	ft_printf(char const *s, ...)
+{
+	va_list	args;
+	int		caract;
+
+	caract = 0;
+	va_start(args, s);
+	caract = check(s, args, caract);
 	va_end(args);
 	return (caract);
 }
