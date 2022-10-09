@@ -6,7 +6,7 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:48:05 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/09/29 19:34:24 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:22:20 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_print_str(char const *s, int count)
 	{
 		count = ft_print_char(s[i], count);
 		if (count == -1)
-			return (count);
+			return (-1);
 		i++;
 	}
 	return (count);
