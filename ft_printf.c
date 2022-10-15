@@ -6,30 +6,33 @@
 /*   By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:02:45 by jsebasti          #+#    #+#             */
-/*   Updated: 2022/10/09 23:14:42 by jsebasti         ###   ########.fr       */
+/*   Updated: 2022/10/15 03:26:28 by jsebasti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "ft_printf.h"
 
 static int	ft_cond(char const c, va_list args, int count)
 {
 	if (c == 'c')
 		count = ft_print_char(va_arg(args, int), count);
-	if (c == 's')
+	else if (c == 's')
 		count = ft_print_str(va_arg(args, char *), count);
-	if (c == 'p')
+	else if (c == 'p')
 		count = ft_print_pointers(va_arg(args, void *), count);
-	if (c == 'i' || c == 'd')
+	else if (c == 'i' || c == 'd')
 		count = ft_print_digits(va_arg(args, int), count);
-	if (c == 'u')
+	else if (c == 'u')
 		count = ft_print_unsigned(va_arg(args, unsigned int), count);
-	if (c == 'x')
+	else if (c == 'x')
 		count = ft_print_hexa_low(va_arg(args, long int), count);
-	if (c == 'X')
+	else if (c == 'X')
 		count = ft_print_hexa_up(va_arg(args, long int), count);
-	if (c == '%')
+	else if (c == '%')
 		count = ft_print_char('%', count);
+	else
+		count = -1;
 	return (count);
 }
 

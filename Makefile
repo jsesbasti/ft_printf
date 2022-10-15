@@ -6,13 +6,15 @@
 #    By: jsebasti <jsebasti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 21:24:52 by jsebasti          #+#    #+#              #
-#    Updated: 2022/09/29 19:34:28 by jsebasti         ###   ########.fr        #
+#    Updated: 2022/10/15 15:39:16 by jsebasti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 HEADER = ft_printf.h
-
+MKFL	= Makefile
 NAME = libftprintf.a
+
+OBJ_DIR	= obj/
 
 SRC =	ft_printf.c \
 		src/ft_print_char.c \
@@ -23,30 +25,40 @@ SRC =	ft_printf.c \
 		src/ft_print_hexa_low.c \
 		src/ft_print_hexa_up.c
 
-CC = gcc
-
 RM = rm -rf
+MP	= mkdir -p
 
-FLAGS = -Werror -Wall -Wextra
+CFLAGS = -Werror -Wall -Wextra -W -O3 -Ofast 
 
 LIBC = ar -rcs
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
+DEP	= $(addsuffix .d, $(basename $(OBJ)))
 
-.c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+$(OBJ_DIR)%.o: %.c $(MKFL)
+	@$(MP) $(dir $@)
+	${CC} ${CFLAGS} -MMD -I ./ -c $< -o $@
 
-$(NAME): $(OBJ) $(HEADER)
+all:
+	@$(MAKE) $(NAME)
+
+$(NAME):: $(OBJ)
 	$(LIBC) $(NAME) $(OBJ)
 
-all: $(NAME)
+$(NAME)::
+	@echo "Hello, i'm already compiled 😇"
+
+-include $(DEP)
 
 clean:
 	$(RM) $(OBJ)
 
-fclean: clean
+fclean:
+	@$(MAKE) clean
 	$(RM) $(NAME)
 
-re: fclean all
+re:
+	@$(MAKE) fclean
+	@$(MAKE) all
 
-.PHONY: all clean fclean re .c.o
+.PHONY: all clean fclean re
